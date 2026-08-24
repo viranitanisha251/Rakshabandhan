@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Rakshabandhan MINI DON !! 🎈✨</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: #0b192c; color: #e0e6ed; text-align: center; }
+    .hero { background: linear-gradient(135deg, #1e3a8a, #0f172a); color: #ffffff; padding: 40px 20px; border-bottom: 2px solid #3b82f6; }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 10px; color: #60a5fa; }
+    
+    /* Top Message Banner Styling */
+    .top-message-container { padding: 30px 20px 10px 20px; }
+    .top-message-box { 
+      background: #1e293b; 
+      max-width: 550px; 
+      margin: 0 auto; 
+      padding: 25px; 
+      border-radius: 20px; 
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); 
+      border-left: 5px solid #3b82f6;
+      border-right: 5px solid #3b82f6;
+    }
+    .top-message-box p { 
+      font-size: 1.05rem; 
+      line-height: 1.7; 
+      color: #cbd5e1; 
+      text-align: center; 
+      font-weight: 500;
+    }
+
+    .gallery-section, .quiz-section, .messages-section { padding: 30px 20px; }
+    .gallery-section h2, .messages-section h2, .quiz-section h2 { color: #60a5fa; margin-bottom: 20px; }
+    .slider-container { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 500px; margin: 0 auto; }
+    .slider-btn { background-color: #2563eb; color: white; border: none; font-size: 1.2rem; padding: 12px 16px; border-radius: 50%; cursor: pointer; transition: 0.3s; }
+    .slider-btn:hover { background-color: #1d4ed8; transform: scale(1.1); }
+    .card { background: #1e293b; padding: 12px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); width: 280px; border: 1px solid #334155; }
+    .card img { width: 100%; height: 320px; object-fit: cover; border-radius: 10px; }
+    .card p { margin-top: 10px; font-weight: bold; color: #93c5fd; }
+    .quiz-section { background-color: #0f172a; }
+    .quiz-box { background: #1e293b; max-width: 450px; margin: 0 auto; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 1px solid #334155; }
+    .question { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #f8fafc; }
+    .options-group { display: flex; flex-direction: column; gap: 10px; }
+    .option-btn { background-color: #0f172a; color: #93c5fd; border: 2px solid #2563eb; padding: 10px; border-radius: 10px; font-size: 1rem; cursor: pointer; transition: 0.3s; }
+    .option-btn:hover { background-color: #2563eb; color: white; }
+    #quiz-result { margin-top: 15px; font-weight: bold; font-size: 1rem; }
+    .btn-group button { background-color: #2563eb; color: white; border: none; padding: 12px 24px; margin: 8px; font-size: 1rem; border-radius: 25px; cursor: pointer; transition: 0.3s; }
+    .btn-group button:hover { background-color: #1d4ed8; transform: scale(1.05); }
+    .message-box { margin: 15px auto; max-width: 500px; background: #1e293b; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-size: 1rem; line-height: 1.6; text-align: justify; color: #cbd5e1; border: 1px solid #334155; }
+    footer { padding: 20px; background: #020617; color: #94a3b8; }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Happy Rakshabandhan, MINI DON !! 🧸</h1>
+    <p>My Little Monster & Most Special Person! ❤️</p>
+  </header>
+
+  <!-- TOP CENTER MESSAGE SECTION -->
+  <section class="top-message-container">
+    <div class="top-message-box">
+      <p>
+        To my dearest little brother, you are super special in my life! Even though you annoy me every single day, life without you would be completely empty. You bring so much joy, laughter, and drama into our home. Always remember that no matter how big you grow, you will always be my precious younger bro! ❤️✨
+      </p>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <h2>Funny & Cute Memories 📸</h2>
+    <div class="slider-container">
+      <button class="slider-btn" onclick="prevPhoto()">❮</button>
+      <div class="card">
+        <img id="slider-img" src="younger_photo1.jpeg" alt="Memory">
+        <p id="slider-caption">Cute Little Bro ❤️</p>
+      </div>
+      <button class="slider-btn" onclick="nextPhoto()">❯</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h2>Little Bro Quiz 🧠</h2>
+    <div class="quiz-box">
+      <p id="question-text" class="question">Loading question...</p>
+      <div id="options-container" class="options-group"></div>
+      <p id="quiz-result"></p>
+    </div>
+  </section>
+
+  <section class="messages-section">
+    <h2>Special Note for You 💌</h2>
+    <div class="btn-group">
+      <button onclick="showMessage('emotional')">Emotional Note ❤️</button>
+      <button onclick="showMessage('funny')">Funny Note 🤪</button>
+    </div>
+    <div id="message-box" class="message-box">
+      <p id="message-text">Click the buttons above to read!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by your Sister!</p>
+  </footer>
+
+  <script>
+    const photos = [
+      { src: "a_photo1.jpeg", caption: "My Naughty Little Bro 😜" },
+      { src: "a_photo2.jpeg", caption: "Always Demanding Chocolates 🍫" },
+      { src: "a_photo3.jpeg", caption: "Unforgettable Fun Times ✨" },
+      { src: "a_photo4.jpeg", caption: "Fighting Partner Forever 🥊" },
+      { src: "a_photo5.jpeg", caption: "Coolest Brother Ever 😎" },
+      { src: "a_photo6.jpeg", caption: "Always My Favorite ❤️" }
+    ];
+
+    let currentPhotoIndex = 0;
+
+    function updatePhoto() {
+      document.getElementById("slider-img").src = photos[currentPhotoIndex].src;
+      document.getElementById("slider-caption").textContent = photos[currentPhotoIndex].caption;
+    }
+
+    function nextPhoto() {
+      currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+      updatePhoto();
+    }
+
+    function prevPhoto() {
+      currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+      updatePhoto();
+    }
+
+    const quizQuestions = [
+      { question: "Who is the most innocent person at home?", options: ["Me (Sister) 😇", "You (Chhota Bro)", "Nobody 😁"], answer: 0 },
+      { question: "What is your main job for your sister?", options: ["Bring TV remote 📺", "Do my small tasks 😜", "Give chocolates", "All of the above!"], answer: 3 }
+    ];
+
+    let currentQuizIndex = 0;
+
+    function loadQuiz() {
+      const q = quizQuestions[currentQuizIndex];
+      document.getElementById("question-text").textContent = q.question;
+      const optContainer = document.getElementById("options-container");
+      optContainer.innerHTML = "";
+      
+      q.options.forEach((opt, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = opt;
+        btn.className = "option-btn";
+        btn.onclick = () => checkAnswer(index, q.answer);
+        optContainer.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected, correct) {
+      const resultP = document.getElementById("quiz-result");
+      const buttons = document.querySelectorAll(".option-btn");
+      buttons.forEach(btn => btn.disabled = true);
+
+      if (selected === correct) {
+        resultP.innerHTML = "Absolutely Right! Badhiya! 🎉";
+        resultP.style.color = "#4ade80";
+      } else {
+        resultP.innerHTML = "Haha, wrong choice buddy! 😜";
+        resultP.style.color = "#60a5fa";
+      }
+      
+      setTimeout(() => {
+        currentQuizIndex = (currentQuizIndex + 1) % quizQuestions.length;
+        resultP.innerHTML = "";
+        loadQuiz();
+      }, 1800);
+    }
+
+    const messages = {
+      emotional: `Happy Rakshabandhan, my little brother! 🧵❤️ Having you in my life is a true blessing. You hold a very special place in my heart, and no matter how much we fight over tiny things, I will always be there to protect you and support your dreams. Stay happy, stay mischievous, and keep shining always! ✨`,
+
+      funny: `Happy Rakshabandhan, Chhota Bro! 🎉😜 You are officially the luckiest brother on Earth because you have me as your sister! Now stop acting like a boss and bring me my Rakhi gift fast. No excuses, no fake stories—hand over the gift or do all my chores for a week! 💸🤑`
+    };
+
+    function showMessage(type) {
+      document.getElementById("message-text").innerHTML = messages[type];
+    }
+
+    window.onload = function() {
+      loadQuiz();
+      updatePhoto();
+    };
+  </script>
+</body>
+</html>
